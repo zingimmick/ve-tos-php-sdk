@@ -44,12 +44,12 @@ class StreamReader implements StreamInterface
         $this->calcCrc64 = $calcCrc64;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->getContents();
     }
 
-    public function close()
+    public function close(): void
     {
         if ($this->origin) {
             $this->origin->close();
@@ -59,17 +59,17 @@ class StreamReader implements StreamInterface
     public function detach()
     {
         if ($this->origin) {
-            $this->origin->detach();
+            return $this->origin->detach();
         }
         return null;
     }
 
-    public function getSize()
+    public function getSize(): ?int
     {
         return $this->contentLength;
     }
 
-    public function tell()
+    public function tell(): int
     {
         if ($this->origin) {
             $this->origin->tell();
@@ -77,42 +77,42 @@ class StreamReader implements StreamInterface
         return 0;
     }
 
-    public function eof()
+    public function eof(): bool
     {
         return $this->remainSize <= 0;
     }
 
-    public function isSeekable()
+    public function isSeekable(): bool
     {
         return false;
     }
 
-    public function seek($offset, $whence = SEEK_SET)
+    public function seek(int $offset, int $whence = SEEK_SET): void
     {
         throw new RuntimeException('Stream is not seekable');
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         throw new RuntimeException('Stream is not seekable');
     }
 
-    public function isWritable()
+    public function isWritable(): bool
     {
         return false;
     }
 
-    public function write($string)
+    public function write(string $string): int
     {
         throw new RuntimeException('Stream is not writable');
     }
 
-    public function isReadable()
+    public function isReadable(): bool
     {
         return true;
     }
 
-    public function read($length)
+    public function read(int $length): string
     {
         if ($this->eof()) {
             return '';
@@ -128,7 +128,7 @@ class StreamReader implements StreamInterface
         return $chunk;
     }
 
-    public function getContents()
+    public function getContents(): string
     {
         if (isset($this->result)) {
             return $this->result;
@@ -142,7 +142,7 @@ class StreamReader implements StreamInterface
         return $result;
     }
 
-    public function getMetadata($key = null)
+    public function getMetadata(string $key = null)
     {
         return null;
     }

@@ -59,7 +59,7 @@ if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
         public function detach()
         {
             if ($this->origin) {
-                $this->origin->detach();
+                return $this->origin->detach();
             }
             return null;
         }
@@ -87,7 +87,7 @@ if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
             return false;
         }
 
-        public function seek($offset, $whence = SEEK_SET): void
+        public function seek(int $offset, int $whence = SEEK_SET): void
         {
             throw new \RuntimeException('Stream is not seekable');
         }
@@ -102,7 +102,7 @@ if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
             return false;
         }
 
-        public function write($string): int
+        public function write(string $string): int
         {
             throw new \RuntimeException('Stream is not writable');
         }
@@ -112,7 +112,7 @@ if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
             return true;
         }
 
-        public function read($length): string
+        public function read(int $length): string
         {
             if ($this->eof()) {
                 return '';
@@ -142,7 +142,7 @@ if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
             return $result;
         }
 
-        public function getMetadata($key = null)
+        public function getMetadata(string $key = null)
         {
             return null;
         }

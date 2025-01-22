@@ -53,7 +53,7 @@ class GetObjectOutput extends GetObjectBasicOutput
                                             $deleteMarker = false, $ssecAlgorithm = '', $ssecKeyMD5 = '', $versionId = '',
                                             $websiteRedirectLocation = '', $objectType = '', $hashCrc64ecma = '', $storageClass = '',
                                 array       &$meta = [], $contentLength = 0, $cacheControl = '', $contentDisposition = '',
-                                            $contentEncoding = '', $contentLanguage = '', $contentType = '', $expires = 0, StreamInterface $content = null)
+                                            $contentEncoding = '', $contentLanguage = '', $contentType = '', $expires = 0, ?StreamInterface $content = null)
     {
         parent::__construct($requestInfo, $contentRange, $etag, $lastModified, $deleteMarker, $ssecAlgorithm, $ssecKeyMD5,
             $versionId, $websiteRedirectLocation, $objectType, $hashCrc64ecma, $storageClass, $meta, $contentLength,

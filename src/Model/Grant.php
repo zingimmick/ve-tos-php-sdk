@@ -32,7 +32,7 @@ class Grant
      * @param Grantee $grantee
      * @param string $permission
      */
-    public function __construct(Grantee $grantee = null, $permission = '')
+    public function __construct(?Grantee $grantee = null, $permission = '')
     {
         $this->grantee = $grantee;
         $this->permission = $permission;

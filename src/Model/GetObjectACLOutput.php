@@ -40,7 +40,7 @@ class GetObjectACLOutput
      * @param Owner $owner
      * @param Grant[] $grants
      */
-    public function __construct(RequestInfo &$requestInfo, $versionId = '', Owner &$owner = null, array &$grants = [])
+    public function __construct(RequestInfo &$requestInfo, $versionId = '', ?Owner &$owner = null, array &$grants = [])
     {
         $this->requestInfo = $requestInfo;
         $this->versionId = $versionId;

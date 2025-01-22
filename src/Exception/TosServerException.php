@@ -39,7 +39,7 @@ class TosServerException extends TosException
      */
     private $resource;
 
-    public function __construct(RequestInfo &$requestInfo = null, $errorCode = '', $message = '',
+    public function __construct(?RequestInfo &$requestInfo = null, $errorCode = '', $message = '',
                                             $hostId = '', $resource = '')
     {
         parent::__construct($message);

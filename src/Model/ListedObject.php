@@ -57,7 +57,7 @@ class ListedObject
      * @param string $storageClass
      * @param string $hashCrc64ecma
      */
-    public function __construct($key = '', $lastModified = 0, $etag = '', $size = 0, Owner &$owner = null, $storageClass = '', $hashCrc64ecma = '')
+    public function __construct($key = '', $lastModified = 0, $etag = '', $size = 0, ?Owner &$owner = null, $storageClass = '', $hashCrc64ecma = '')
     {
         $this->key = $key;
         $this->lastModified = $lastModified;

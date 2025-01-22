@@ -33,7 +33,7 @@ if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
 
         const DefaultChunkSize = 65536;
 
-        public function __construct(StreamInterface $origin = null, $contentLength = 0, $calcCrc64 = false)
+        public function __construct(?StreamInterface $origin = null, $contentLength = 0, $calcCrc64 = false)
         {
             $this->origin = $origin;
             if ($contentLength < 0) {
@@ -142,7 +142,7 @@ if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
             return $result;
         }
 
-        public function getMetadata(string $key = null)
+        public function getMetadata(?string $key = null)
         {
             return null;
         }
@@ -176,7 +176,7 @@ if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
 
         const DefaultChunkSize = 65536;
 
-        public function __construct(StreamInterface $origin = null, $contentLength = 0, $calcCrc64 = false)
+        public function __construct(?StreamInterface $origin = null, $contentLength = 0, $calcCrc64 = false)
         {
             $this->origin = $origin;
             if ($contentLength < 0) {

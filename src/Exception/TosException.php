@@ -19,7 +19,7 @@ namespace Tos\Exception;
 class TosException extends \RuntimeException
 {
 
-    public function __construct($message = '', \Exception &$cause = null)
+    public function __construct($message = '', ?\Exception &$cause = null)
     {
         parent::__construct($message, 0, $cause);
     }
